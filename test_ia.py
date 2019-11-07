@@ -19,7 +19,7 @@ def open_csv(file):
 
 def test_occurence(cols):
     score = 0
-    reg =  r'\b(?:rappel|j\'ai pris|j\'ai fait|je me suis vaccine|je vais faire|je vais prendre)\b'
+    reg =  r'\b(?:rappel|j\'ai pris|j\'ai fait|je me suis|je vais faire|je vais prendre|je suis vaccine|je viens de faire|je me suis vaccine)\b'
     res = re.findall(reg, cols)
     if res != []:
         print(res)
@@ -33,7 +33,8 @@ def open_xlsx(file):
         cols = sheet.row_values(rowx)
         cols[3].lower()
         if test_occurence(cols[3]) == 1:
-            print(cols[3])
+            pass
+            #print(cols[3])
 
 def main():
     if len(sys.argv) != 2:
